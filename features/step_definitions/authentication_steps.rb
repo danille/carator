@@ -37,7 +37,7 @@ Then("I should be logged in") do
   expect(page).to have_content("Signed in")
 end
 
-Given("I am a logged in") do
+Given("I am logged in") do
   visit root_path
 
   fill_in "user_email", with: "tester@testdomain.com"

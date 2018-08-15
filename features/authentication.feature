@@ -18,7 +18,7 @@ Feature: Authentication
 
   Scenario: User Logs Out
     Given I am a registered user
-    And I am a logged in
+    And I am logged in
     And I visit the homepage
     When I click log out button
     Then I should be redirected to the log in page
