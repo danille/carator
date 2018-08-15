@@ -8,7 +8,7 @@ When("I fill in the sign up form") do
   fill_in "user_email", with: "tester@testdomain.com"
   fill_in "user_password", with: "pa$$w0rd"
   fill_in "user_password_confirmation", with: "pa$$w0rd"
-  click_button “Sign up”
+  click_button "Sign up"
 end
 
 When("I confirm the email") do
@@ -24,7 +24,7 @@ Then("should see that my account is confirmed") do
 end
 
 Given("I am a registered user") do
-  @registered_user = FactoryBot.create(:user, name: "tester@testdomain.com", password: "pa$$w0rd")
+  @registered_user = FactoryBot.create(:user, email: "tester@testdomain.com", password: "pa$$w0rd")
 end
 
 When("I fill in a log in form") do
@@ -34,7 +34,7 @@ When("I fill in a log in form") do
 end
 
 Then("I should be logged in") do
-  expect(page).to have_content("Logged in")
+  expect(page).to have_content("Signed in")
 end
 
 Given("I am a logged in") do

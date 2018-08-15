@@ -46,6 +46,7 @@ group :development, :test do
       git: 'https://github.com/thoughtbot/shoulda-matchers.git',
       branch: 'rails-5'
   gem 'factory_bot_rails'
+  gem 'email_spec'
 end
 
 group :development do
