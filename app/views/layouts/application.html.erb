@@ -2,16 +2,11 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/rails_defaults' %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to('Log out', destroy_user_session_path, method: :delete) %>
-    <% end %>
+    <%= render 'layouts/header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
