@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = current_user.cars
   end
 end

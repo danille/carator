@@ -1,12 +1,12 @@
 Given("I have populated my garage with several cars") do
   FactoryBot.create(:car,
                     user: @registered_user,
-                    brand: "Mercedes Benz",
+                    manufacturer: "Mercedes Benz",
                     model: "S300")
 
   FactoryBot.create(:car,
                     user: @registered_user,
-                    brand: "Mazda",
+                    manufacturer: "Mazda",
                     model: "6")
 
 end
