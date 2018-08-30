@@ -27,7 +27,7 @@ end
 When("I submit filled in new car form") do
   fill_in "car_manufacturer", with: "Volkswagen"
   fill_in "car_model", with: "Golfwagen LD"
-  fill_in "car_production_date", with: "2017"
+  fill_in "car_production_year", with: "2017"
 
   click_button "Add new car"
 end

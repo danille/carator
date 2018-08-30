@@ -1,4 +1,7 @@
 <% provide(:title, "My cars") %>
 <ul class="list-unstyled">
+  <button class="button">
+    <%= link_to "Add new car", new_car_path %>
+  </button>
   <%= render @cars%>
 </ul>

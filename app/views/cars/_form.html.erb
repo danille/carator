@@ -1,0 +1,14 @@
+<%= form_for(@car) do |f| %>
+  <%= render 'error_messages' %>
+
+  <%= f.label :manufacturer %>
+  <%= f.text_field :manufacturer, class: 'form-control' %>
+
+  <%= f.label :model %>
+  <%= f.text_field :model, class: 'form-control' %>
+
+  <%= f.label :production_year %>
+  <%= f.text_field :production_year, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
