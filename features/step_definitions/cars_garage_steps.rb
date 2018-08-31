@@ -8,7 +8,6 @@ Given("I have populated my garage with several cars") do
                     user: @registered_user,
                     manufacturer: "Mazda",
                     model: "6")
-
 end
 
 Then("I should see the list of my cars") do
@@ -34,5 +33,14 @@ end
 
 Then("I should see new car in my cars listing") do
   expect(page).to have_content("Volkswagen Golfwagen LD")
+end
+
+When("I click on the car link") do
+  page.first('.car-link').click
+end
+
+Then("I should see details of the car") do
+  expect(page).to have_content("Marcedes Benz")
+  expect(page).to have_content("S300")
 end
 
