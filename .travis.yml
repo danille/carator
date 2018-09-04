@@ -7,4 +7,4 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
-  - psql -c 'create database quote_test' -U postgres
+  - psql -c 'create database carator_test' -U postgres
