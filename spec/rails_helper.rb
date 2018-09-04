@@ -1,6 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'support/controller_helpers'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
@@ -34,7 +33,7 @@ end
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include Devise::TestHelpers, :type => :controller
-  config.include ControllerHelpers, :type => :controller
+  config.include ControllerHelper, :type => :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
