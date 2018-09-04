@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20180902175622) do
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
