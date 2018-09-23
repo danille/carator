@@ -1,14 +1,25 @@
-<%= form_for(@car) do |f| %>
-  <%= render 'error_messages' %>
+<script type="text/javascript">
+    $(document).on('turbolinks:load', function () {
+        $.getScript("http://www.carqueryapi.com/js/carquery.0.3.4.js", function () {
+            let carquery = new CarQuery();
+            carquery.init();
+            carquery.initYearMakeModelTrim('car_production_year', 'car_manufacturer', 'car_model', 'car_trim');
+        });
+    });
+</script>
 
-  <%= f.label :manufacturer %>
-  <%= f.text_field :manufacturer, class: 'form-control' %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @car, url: {action: "create"} do |car_form| %>
 
-  <%= f.label :model %>
-  <%= f.text_field :model, class: 'form-control' %>
+      <%= car_form.text_field :custom_name, :placeholder => "Your own car name" %>
+      <%= car_form.select(:production_year, options_for_select([], 0)) %>
+      <%= car_form.select(:manufacturer, options_for_select([], 0)) %>
+      <%= car_form.select(:model, options_for_select([], 0)) %>
+      <%= car_form.select(:trim, options_for_select([], 0)) %>
 
-  <%= f.label :production_year %>
-  <%= f.text_field :production_year, class: 'form-control' %>
+      <%= car_form.submit yield(:button_text) %>
+    <% end %>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+  </div>
+</div>

@@ -24,9 +24,11 @@ When("I click on Add new car link") do
 end
 
 When("I submit filled in new car form") do
-  fill_in "car_manufacturer", with: "Volkswagen"
-  fill_in "car_model", with: "Golfwagen LD"
-  fill_in "car_production_year", with: "2017"
+  fill_in 'car_custom_name', with: "Test car custom name"
+  select('2016', from: 'car_production_year')
+  select('Chevrolet', from: 'car_manufacturer')
+  select('Express', from: 'car_model')
+  select('LS 2500 3dr Van (4.8L 8cyl 6A)', from: 'car_trim')
 
   click_button "Add new car"
 end

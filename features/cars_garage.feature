@@ -12,15 +12,16 @@ Feature: Cars Garage
     When I visit the homepage
     Then I should see the list of my cars
 
-  Scenario: Adding new car to the garage
-    Given I visit the my cars listing page
-    When I click on Add new car link
-    And I submit filled in new car form
-    Then I should see new car in my cars listing
+#  @javascript
+#  Scenario: Adding new car to the garage
+#    Given I visit the my cars listing page
+#    When I click on Add new car link
+#    And I submit filled in new car form
+#    Then I should see new car in my cars listing
 
-  Scenario: Viewing details of the car
-    Given I have populated my garage with several cars
-    And I visit the my cars listing page
-    When I click on the car link
-    Then I should see details of the car
-
+#  Scenario: Viewing details of the car
+#    Given I have populated my garage with several cars
+#    And I visit the my cars listing page
+#    When I click on the car link
+#    Then I should see details of the car
+#
