@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180902175622) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cars", force: :cascade do |t|
     t.string "manufacturer"
     t.string "model"
@@ -23,9 +26,6 @@ ActiveRecord::Schema.define(version: 20180902175622) do
     t.string "custom_name"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
