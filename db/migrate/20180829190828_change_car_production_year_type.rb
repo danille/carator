@@ -1,6 +1,6 @@
 class ChangeCarProductionYearType < ActiveRecord::Migration[5.1]
   def change
-    change_column :cars, :production_year, 'integer USING EXTRACT(YEAR(production_year) AS integer)'
-
+    remove_column :cars, :production_year
+    add_column :cars, :production_year
   end
 end
