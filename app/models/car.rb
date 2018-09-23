@@ -1,9 +1,11 @@
 class Car < ApplicationRecord
-  before_save :capitalize_manufacturer_name
+  before_save :titleize_manufacturer_name
   belongs_to :user
 
-  def capitalize_manufacturer_name
-    manufacturer.titleize!
+  private
+
+  def titleize_manufacturer_name
+    self.manufacturer = manufacturer.titleize
   end
 
 end
