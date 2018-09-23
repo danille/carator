@@ -8,11 +8,11 @@ require 'faker'
                })
 end
 
-20.times do |n|
+20.times do
   manufacturer = Faker::Vehicle.make
   model = Faker::Vehicle.model(manufacturer)
   Car.create({
-      brand: manufacturer,
+      manufacturer: manufacturer,
       model: model,
       user: User.first
              })
