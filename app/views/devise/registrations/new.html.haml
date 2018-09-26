@@ -1,3 +1,4 @@
+- provide(:sign_up_btn_text, "Sign up")
 %section#login
   .container
     .row
@@ -21,8 +22,8 @@
               = sign_up_form.label :password_confirmation
               %br/
               = sign_up_form.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-            %div{:class => "actions’"}
-              = sign_up_form.submit "Sign up", class: 'btn btn-custom'
+            .actions
+              = sign_up_form.submit yield(:sign_up_btn_text), class: 'btn btn-custom'
           %hr/
           .forget
             = render 'devise/shared/links'
