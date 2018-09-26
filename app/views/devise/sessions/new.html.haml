@@ -1,0 +1,25 @@
+%section#login
+  .container
+    .row
+      .col-xs-12
+        .form-wrap
+          %h1 Log in
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |form|
+            .form-group
+              = form.label :email
+              %br/
+              = form.email_field :email, autofocus: true, autocomplete: "Email", |
+                class: "form-control", placeholder: "somebody@example.com"       |
+            .form-group
+              = form.label :password
+              %br/
+              = form.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+            .form-group
+              - if devise_mapping.rememberable?
+                = form.check_box :remember_me
+                = form.label :remember_me
+            .actions
+              = form.submit "Log in", class: "btn btn-custom"
+          %hr/
+          .forget
+            = render "devise/shared/links"
