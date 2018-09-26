@@ -1,19 +1,25 @@
+- provide(:log_in_link_text, "Log in")
+- provide(:sign_up_link_text, "Sign up")
+- provide(:forgot_password_link_text, "Forgot your password?")
+- provide(:confirmations_instructions_link_text, "Didn't receive confirmation instructions?")
+- provide(:unlock_instructions_link_text, "Didn't receive unlock instructions?")
+- provide(:oauth_sign_in_link_text, "Sign in with")
 - if controller_name != 'sessions'
-  = link_to "Log in", new_session_path(resource_name)
+  = link_to yield(:log_in_link_text), new_session_path(resource_name)
   %br/
 - if devise_mapping.registerable? && controller_name != 'registrations'
-  = link_to "Sign up", new_registration_path(resource_name)
+  = link_to yield(:sign_up_link_text), new_registration_path(resource_name)
   %br/
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-  = link_to "Forgot your password?", new_password_path(resource_name)
+  = link_to yield(:forgot_password_link_text), new_password_path(resource_name)
   %br/
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
-  = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
+  = link_to yield(:confirmations_instructions_link_text), new_confirmation_path(resource_name)
   %br/
 - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
-  = link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
+  = link_to yield(:unlock_instructions_link_text), new_unlock_path(resource_name)
   %br/
 - if devise_mapping.omniauthable?
   - resource_class.omniauth_providers.each do |provider|
-    = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+    = link_to "#{yield(:oauth_sign_in_link_text)} #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
     %br/
