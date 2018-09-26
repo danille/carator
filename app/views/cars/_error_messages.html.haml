@@ -1,0 +1,7 @@
+- if @car.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      The form contains #{pluralize(@car.errors.count, "error")}.
+    %ul
+      - @car.errors.full_messages.each do |msg|
+        %li= msg

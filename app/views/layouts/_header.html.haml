@@ -1,0 +1,17 @@
+%nav.navbar.navbar-inverse
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => "#"} Carator
+    #navbar-collapse-4.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li
+            = link_to 'My cars', cars_path
+          %li
+            = link_to 'Log out', destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to 'Log in', new_user_session_path
+    / /.navbar-collapse
+  / /.container
+/ /.navbar
