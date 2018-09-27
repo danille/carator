@@ -1,6 +1,8 @@
 {
   "name": "carator",
-  "scripts": {},
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
   "env": {
     "LANG": {
       "required": true
