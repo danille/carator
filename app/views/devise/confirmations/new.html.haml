@@ -1,0 +1,22 @@
+- provide(:resend_confirmation_btn_text, "Resend confirmation instructions")
+%section#login
+  .container
+    .row
+      .col-xs-12
+        .form-wrap
+          %h1 Resend confirmation instructions
+          = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |resend_confirmation_form|
+            = devise_error_messages!
+            .form-group
+              = resend_confirmation_form.label :email
+              %br/
+              = resend_confirmation_form.email_field :email,
+                                                      class: 'form-control',
+                                                      autofocus: true,
+                                                      autocomplete: "email",
+                                                      value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+            .actions
+              = resend_confirmation_form.submit yield(:resend_confirmation_btn_text), class: 'btn btn-custom'
+          %hr/
+          .forget
+            = render "devise/shared/links"

@@ -1,0 +1,6 @@
+%li.car-row
+  .jumbotron
+    %h2
+      = link_to "#{car.custom_name}", car, class: "car-link"
+    %h3
+      = link_to "#{car.manufacturer} #{car.model} #{car.trim}", car, class: "car-link"

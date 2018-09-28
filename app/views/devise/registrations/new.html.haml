@@ -1,0 +1,29 @@
+- provide(:sign_up_btn_text, "Sign up")
+%section#login
+  .container
+    .row
+      .col-xs-12
+        .form-wrap
+          %h1 Sign up
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |sign_up_form|
+            = devise_error_messages!
+            .form-group
+              = sign_up_form.label :email
+              %br/
+              = sign_up_form.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+            .form-group
+              = sign_up_form.label :password
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              %br/
+              = sign_up_form.password_field :password, autocomplete: "off", class: 'form-control'
+            .form-group
+              = sign_up_form.label :password_confirmation
+              %br/
+              = sign_up_form.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+            .actions
+              = sign_up_form.submit yield(:sign_up_btn_text), class: 'btn btn-custom'
+          %hr/
+          .forget
+            = render 'devise/shared/links'
