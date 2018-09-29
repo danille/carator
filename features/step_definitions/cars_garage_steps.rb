@@ -48,3 +48,15 @@ Then("I should see details of the car") do
   expect(page).to have_content("S300")
 end
 
+When("I click on Remove this car link") do
+  click_link "Remove this car"
+end
+
+When("Confirm Remove car operation") do
+  page.driver.browser.switch_to.alert.accept
+end
+
+Then("Car should be removed from the garage") do
+  expect(page).to_not have_content("Mercedes Benz")
+end
+

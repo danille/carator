@@ -24,3 +24,9 @@ Feature: Cars Garage
     When I click on the car link
     Then I should see details of the car
 
+  Scenario: Removing car from the garage
+    Given I visit the my cars listing page
+    And I click on the car link
+    When I click on Remove this car link
+    And Confirm Remove car operation
+    Then Car should be removed from the garage
