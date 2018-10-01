@@ -1,10 +1,12 @@
 Given("I have populated my garage with several cars") do
   FactoryBot.create(:car,
                     user: @registered_user,
+                    custom_name: "Student",
                     manufacturer: "Mercedes Benz",
                     model: "S300")
 
   FactoryBot.create(:car,
+                    custom_name: "Lector",
                     user: @registered_user,
                     manufacturer: "Mazda",
                     model: "6")
@@ -42,7 +44,7 @@ When("I click on the car link") do
 end
 
 Then("I should see details of the car") do
-  expect(page).to have_content("Marcedes Benz")
+  expect(page).to have_content("Mercedes Benz")
   expect(page).to have_content("S300")
 end
 

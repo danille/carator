@@ -1,0 +1,12 @@
+- provide(:title, @car.custom_name)
+.container
+  .col-xs-8.col-xs-offset-2
+    .jumbotron.text-center
+      .h1
+        = @car.custom_name
+      .h3
+        = @car.manufacturer
+      .h3
+        = @car.model
+      .p
+        = @car.trim
