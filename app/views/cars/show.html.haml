@@ -1,4 +1,6 @@
 - provide(:title, @car.custom_name)
+- provide(:remove_car_btn_text, 'Remove this car')
+- provide(:remove_confirmation_msg_text, "You are about to remove this car from the garage. Are you sure?")
 .container
   .col-xs-8.col-xs-offset-2
     .jumbotron.text-center
@@ -10,3 +12,8 @@
         = @car.model
       .p
         = @car.trim
+      = link_to(yield(:remove_car_btn_text),
+                @car,
+                method: :delete,
+                class: 'btn btn-danger',
+                data: { confirm: yield(:remove_confirmation_msg_text) })
