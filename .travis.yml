@@ -2,11 +2,14 @@ language: ruby
 cache: bundler
 env:
   - DB=postgresql
+  - MOZ_HEADLESS=1
+addons:
+  firefox: latest
 before_install:
-    - wget https://github.com/mozilla/geckodriver/releases/download/v0.22.0/geckodriver-v0.22.0-linux64.tar.gz
-    - mkdir geckodriver
-    - tar -xzf geckodriver*.tar.gz -C geckodriver
-    - export PATH=$PATH:$PWD/geckodriver
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.22.0/geckodriver-v0.22.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver*.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
 before_script:
   - psql -c 'create database carator_test' -U postgres
   - "export DISPLAY=:99.0" # https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI

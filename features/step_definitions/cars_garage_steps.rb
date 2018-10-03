@@ -26,7 +26,6 @@ When("I click on Add new car link") do
 end
 
 When("I submit filled in new car form") do
-  puts page.body
   fill_in 'car_custom_name', with: "Test car custom name"
   select('2016', from: 'car_production_year')
   select('Chevrolet', from: 'car_manufacturer')
