@@ -12,6 +12,7 @@
         = @car.model
       .p
         = @car.trim
+
       = link_to(yield(:remove_car_btn_text),
                 @car,
                 method: :delete,
