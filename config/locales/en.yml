@@ -30,4 +30,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  add_new_car: "Add new car"
+  my_cars: "My cars"
+  car_name_hint: "Your own car name"
+  remove_car_title: "Remove this car"
+  remove_car_confirmation: "You are about to remove this car from the garage. Are you sure?"
+  log_out: "Log out"
+  log_in: "Log in"
+  sign_up: "Sign up"
+  forgot_password: "Forgot password?"
+  didnt_receive_confirmation_instruction: "Didn't receive confirmation instructions?"
+  didnt_receive_unlock_instruction: "Didn't receive unlock instructions?"
+  sign_in_with: "Sign in with"
+  resend_instructions: "Resend confirmation instructions"
+  log_in_email_hint: "somebody@example.com"
+  log_in_password_hint: "Password"
+

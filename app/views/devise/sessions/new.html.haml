@@ -1,4 +1,4 @@
-- provide(:log_in_btn_text, "Log in")
+- provide(:log_in_btn_text, t('log_in'))
 %section#login
   .container
     .row
@@ -10,11 +10,11 @@
               = form.label :email
               %br/
               = form.email_field :email, autofocus: true, autocomplete: "Email", |
-                class: "form-control", placeholder: "somebody@example.com"       |
+                class: "form-control", placeholder: t('log_in_email_hint')
             .form-group
               = form.label :password
               %br/
-              = form.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+              = form.password_field :password, autocomplete: "off", class: "form-control", placeholder: t('log_in_password_hint')
             .form-group
               - if devise_mapping.rememberable?
                 = form.check_box :remember_me

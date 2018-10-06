@@ -1,9 +1,9 @@
-- provide(:log_in_link_text, "Log in")
-- provide(:sign_up_link_text, "Sign up")
-- provide(:forgot_password_link_text, "Forgot your password?")
-- provide(:confirmations_instructions_link_text, "Didn't receive confirmation instructions?")
-- provide(:unlock_instructions_link_text, "Didn't receive unlock instructions?")
-- provide(:oauth_sign_in_link_text, "Sign in with")
+- provide(:log_in_link_text, t('log_in'))
+- provide(:sign_up_link_text, t('sign_up'))
+- provide(:forgot_password_link_text, t('forgot_password'))
+- provide(:confirmations_instructions_link_text, t('didnt_receive_confirmation_instruction'))
+- provide(:unlock_instructions_link_text, t('didnt_receive_unlock_instruction'))
+- provide(:oauth_sign_in_link_text, t('sign_in_with'))
 - if controller_name != 'sessions'
   = link_to yield(:log_in_link_text), new_session_path(resource_name)
   %br/
