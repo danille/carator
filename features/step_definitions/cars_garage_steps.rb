@@ -36,7 +36,7 @@ When("I submit filled in new car form") do
 end
 
 Then("I should see new car in my cars listing") do
-  expect(page).to have_content("Volkswagen Golfwagen LD")
+  expect(page).to have_content("Chevrolet Express")
 end
 
 When("I click on the car link") do
@@ -46,5 +46,18 @@ end
 Then("I should see details of the car") do
   expect(page).to have_content("Mercedes Benz")
   expect(page).to have_content("S300")
+end
+
+When("I click on Remove this car link") do
+  click_link "Remove this car"
+end
+
+When("Confirm Remove car operation") do
+  print page.driver
+  page.driver.browser.switch_to.alert.accept
+end
+
+Then("Car should be removed from the garage") do
+  expect(page).to_not have_content("Mercedes Benz")
 end
 
