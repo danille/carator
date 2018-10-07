@@ -18,17 +18,14 @@ ActiveRecord::Schema.define(version: 20180902175622) do
   create_table "cars", force: :cascade do |t|
     t.string "manufacturer"
     t.string "model"
-    t.integer "production_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
+    t.integer "production_year"
     t.string "trim"
     t.string "custom_name"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,4 +47,5 @@ ActiveRecord::Schema.define(version: 20180902175622) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cars", "users"
 end

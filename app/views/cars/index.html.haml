@@ -1,5 +1,5 @@
-- provide(:title, "My cars")
-- provide(:adding_button_text, "Add new car")
+- provide(:title, t('my_cars'))
+- provide(:adding_button_text, t('add_new_car'))
 %ul.list-unstyled
   = link_to yield(:adding_button_text), new_car_path, class: 'btn btn-primary'
   = render @cars

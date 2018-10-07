@@ -27,9 +27,13 @@ end
 
 When("I submit filled in new car form") do
   fill_in 'car_custom_name', with: "Test car custom name"
+  sleep 2
   select('2016', from: 'car_production_year')
+  sleep 2
   select('Chevrolet', from: 'car_manufacturer')
+  sleep 2
   select('Express', from: 'car_model')
+  sleep 2
   select('LS 2500 3dr Van (4.8L 8cyl 6A)', from: 'car_trim')
 
   click_button "Add new car"
